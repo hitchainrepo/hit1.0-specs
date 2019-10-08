@@ -34,18 +34,37 @@ Project Information File 是 Hit 仓库基本信息的主要描述文件，包�
 
 ## Signature
 
-签名
+文件内容的第一行是签名信息，是对除第一行外下面的内容进行签名，其作用是用于校验该文件不被其他人（非拥有者）修改。
+
+签名方法：MD5withRSA, sign(content, ownerRsaPrivateKey)
+
+验证签名：MD5withRSA, verify(content, signature, ownerRsaPublicKey)
 
 ## Version
 
+版本信息指定当前规范的版本。
+* version：版本信息
+
 ## Entrance Url
+
 ### Ethereum Entrance
+
+以太坊入口地址。
+* ethereumUrl：以太坊服务地址
+
+**Notice**: 该入口地址配置不再使用，将会在未来版本中移除。
 
 ### File Server Entrance
 
+文件服务入口地址，目前采用 IPFS 作为文件存储，该地址为 IPFS 文件服务地址入口。
+* fileServerUrl：IPFS 服务地址
 
 ## Owner
 
+仓库拥有者（创建者）信息，包括：
+* owner：拥有者的帐号，以太坊帐户地址
+* ownerPubKeyRsa：拥有者的 RSA 公钥
+* ownerAddressEcc：拥有者的以太坊帐户地址
 
 ## Repository
 ### Basic Information

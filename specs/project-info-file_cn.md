@@ -63,12 +63,29 @@ Project Information File 是 Hit 仓库基本信息的主要描述文件，包�
 
 仓库拥有者（创建者）信息，包括：
 * owner：拥有者的帐号，以太坊帐户地址
-* ownerPubKeyRsa：拥有者的 RSA 公钥
+* ownerPubKeyRsa：拥有者的 RSA 公钥，用于签名及仓库加密
 * ownerAddressEcc：拥有者的以太坊帐户地址
 
 ## Repository
 ### Basic Information
 
+仓库基础信息包括：
+* repoName：仓库名称
+* repoAddress：仓库地址，仓库地址格式为：contractAddress-id
+
 ### Repository Encrypt
 
+仓库加密信息包括：
+* repoPriKey：仓库采用加密时会随机生成 RSA 密钥对，其中仓库的私钥使用拥有者的公钥（ownerPubKeyRsa）加密，仓库的私钥用于仓库的解密
+* repoPubKey：仓库的公钥用于加密仓库
+
 ## Member
+
+仓库成员信息 members 为一个数组，成员信息包括：
+* member：成员的帐号，以太坊帐户地址
+* memberPubKeyRsa：成员的 RSA 公钥，用于仓库私钥加密
+* memberAddressEcc：成员的以太坊帐户地址
+* memberRepoPriKey：仓库私钥加密，该加密的过程为：
+    - 1）Owner 添加成员时使用自己的私钥对仓库加密的私钥（repoPriKey）进行解密得到原始私钥；
+    - 2）使用成员的公钥对原始私钥进行加密得到（memberRepoPriKey）；
+    - 3）成员通过自己的私钥解密（memberRepoPriKey）得到原始的仓库密钥并对文件进行解密；

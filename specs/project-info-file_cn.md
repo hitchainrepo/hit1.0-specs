@@ -1,7 +1,20 @@
-# Project Information File 规范
+# Project Information File Specification
 
 ## Table of contents
 <!-- TOC -->
+- [Project Information File Specification](#project-information-file-specification)
+  * [Table of contents](#table-of-contents)
+  * [Description](#description)
+  * [Signature](#signature)
+  * [Version](#version)
+  * [Entrance Url](#entrance-url)
+    + [Ethereum Entrance](#ethereum-entrance)
+    + [File Server Entrance](#file-server-entrance)
+  * [Owner](#owner)
+  * [Repository](#repository)
+    + [Basic Information](#basic-information)
+    + [Repository Encrypt](#repository-encrypt)
+  * [Member](#member)
 <!-- /TOC -->
 
 ## Description

@@ -15,6 +15,7 @@
     + [Basic Information](#basic-information)
     + [Repository Encrypt](#repository-encrypt)
   * [Member](#member)
+  * [File Path](#file-path)
 <!-- /TOC -->
 
 ## Description
@@ -59,7 +60,6 @@ Project Information File 是 Hit 仓库基本信息的主要描述文件，包�
 * version：版本信息
 
 ## Entrance Url
-
 ### Ethereum Entrance
 
 以太坊入口地址。
@@ -102,3 +102,6 @@ Project Information File 是 Hit 仓库基本信息的主要描述文件，包�
     - 1）Owner 添加成员时使用自己的私钥对仓库加密的私钥（repoPriKey）进行解密得到原始私钥；
     - 2）使用成员的公钥对原始私钥进行加密得到（memberRepoPriKey）；
     - 3）成员通过自己的私钥解密（memberRepoPriKey）得到原始的仓库密钥并对文件进行解密；
+
+## File Path
+文件存储位置：.git/objects/hit/projectinfo

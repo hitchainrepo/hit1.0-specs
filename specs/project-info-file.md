@@ -15,6 +15,7 @@
     + [Basic Information](#basic-information)
     + [Repository Encrypt](#repository-encrypt)
   * [Member](#member)
+  * [File Path](#file-path)
 <!-- /TOC -->
 
 ## Description
@@ -99,3 +100,6 @@ The warehouse member information members is an array, and the member information
     - 1) Owner uses the private key to decrypt the private key (repoPriKey) encrypted by the warehouse to obtain the original private key;
     - 2) Encrypt the original private key using the member's public key (memberRepoPriKey);
     - 3) The member obtains the original warehouse key and decrypts the file by decrypting its own private key (memberRepoPriKey);
+
+## File Path
+File storage location: .git/objects/hit/projectinfo
